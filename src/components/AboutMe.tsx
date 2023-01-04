@@ -3,10 +3,12 @@ import imgAboutMe from "../assets/imgAboutMe.jpg";
 
 export function AboutMe() {
   return (
-    <div className="w-full h-screen flex justify-around items-center ">
+    <div className="w-full h-screen flex justify-around items-center border-b-[1px] border-zinc-900">
       <div className="flex flex-col justify-start  text-white font-roboto gap-3 max-w-xl ">
         <h1 className="font-semibold text-4xl">Gabriel Shiota</h1>
-        <h3 className="font-medium text-2xl mt-3">Desenvolvedor Web</h3>
+        <h3 className="font-medium text-2xl mt-3 border-b-4 border-zinc-900	">
+          Desenvolvedor Web
+        </h3>
         <p className="text-xl text-gray-400">
           Estudante de ciência da computação, com estudos focados para
           desenvolvimento web.
@@ -28,7 +30,7 @@ export function AboutMe() {
         </nav>
       </div>
       <div>
-        <img src={imgAboutMe} alt="" className="h-96 w-96 rounded-full" />
+        <img src={imgAboutMe} alt="" className="h-96 w-96 rounded-lg" />
       </div>
     </div>
   );
