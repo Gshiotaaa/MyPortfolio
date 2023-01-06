@@ -15,6 +15,12 @@ export function Skills() {
         "CSS é a sigla para Cascading Style Sheets, ou seja, Folhas de Estilo em Cascatas. É uma maneira de dar estilo ao código criado por linguagens como HTML, XML ou XHTML.",
     },
     {
+      name: "JavaScript",
+      img: "https://www.svgrepo.com/show/303206/javascript-logo.svg",
+      description:
+        "JavaScript é uma linguagem de script orientada a objetos, multiplataforma. Dentro de um ambiente de host, o JavaScript pode ser ligado aos objetos deste ambiente para prover um controle programático sobre eles.",
+    },
+    {
       name: "TypeScript",
       img: "https://cdn-icons-png.flaticon.com/512/5968/5968381.png",
       description:
@@ -29,14 +35,19 @@ export function Skills() {
   ];
 
   return (
-    <div className="h-screen w-full flex flex-col items-center justify-center ">
+    <div className="h-screen w-full flex flex-col items-center justify-center border-b-[1px] border-zinc-900 ">
       <div className="w-full flex flex-col items-center gap-10 text-white ">
-        <h1 className="text-6xl">Skills</h1>
-        <div className="flex gap-6">
+        <h1 className="text-6xl">Hard Skills</h1>
+        <div
+          className="flex gap-6 
+         rounded-lg"
+        >
           {stacks.map((stack) => (
             <SkillsDescription
+              key={stack.name}
               nameStack={stack.name}
               img={stack.img}
+              title={stack.name}
               description={stack.description}
             />
           ))}

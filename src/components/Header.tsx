@@ -1,6 +1,6 @@
 export function Header() {
   return (
-    <div className="w-full h-28 flex justify-around items-center bg-zinc-900 fixed rounded-b-2xl">
+    <div className="w-full h-28 flex justify-around items-center bg-zinc-900 fixed rounded-b-2xl z-10">
       <img
         className="h-14 w-14 bg-zinc-800"
         src="https://cdn-icons-png.flaticon.com/512/2602/2602982.png"
