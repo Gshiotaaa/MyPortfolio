@@ -9,13 +9,13 @@ export function Header() {
       <div>
         <nav>
           <ul className="text-gray-400 flex gap-8 font-roboto font-normal text-2xl">
-            <li className="hover:text-white transition delay-100">
+            <li className="hover:text-white transition-all duration-500">
               <a href=""> Home</a>
             </li>
-            <li className="hover:text-white transition delay-100">
+            <li className="hover:text-white transition-all duration-500">
               <a href="">Skills</a>
             </li>
-            <li className="hover:text-white transition delay-100">
+            <li className="hover:text-white transition-all duration-500">
               <a href="">Projects</a>
             </li>
           </ul>

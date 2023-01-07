@@ -10,6 +10,8 @@ export function App() {
       <AboutMe />
       <Skills />
       <Projects />
+
+      <div>FOOTER</div>
     </div>
   );
 }

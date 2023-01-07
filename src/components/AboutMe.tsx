@@ -6,7 +6,7 @@ export function AboutMe() {
     <div className="w-full h-screen flex justify-around items-center border-b-[1px] border-zinc-900">
       <div className="flex flex-col justify-start  text-white font-roboto gap-3 max-w-xl ">
         <h1 className="font-semibold text-4xl">Gabriel Shiota</h1>
-        <h3 className="font-medium text-2xl mt-3 border-b-4 border-zinc-900	">
+        <h3 className="font-medium text-2xl mt-3 border-b-[1px] border-sky-400	">
           Desenvolvedor Web
         </h3>
         <p className="text-xl text-gray-400">
@@ -30,7 +30,11 @@ export function AboutMe() {
         </nav>
       </div>
       <div>
-        <img src={imgAboutMe} alt="" className="h-96 w-96 rounded-lg" />
+        <img
+          src={imgAboutMe}
+          alt=""
+          className="h-96 w-96 rounded-lg border-[2px] border-sky-400"
+        />
       </div>
     </div>
   );
