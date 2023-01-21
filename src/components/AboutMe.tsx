@@ -3,8 +3,8 @@ import imgAboutMe from "../assets/imgAboutMe.jpg";
 
 export function AboutMe() {
   return (
-    <div className="w-full h-screen flex justify-around items-center border-b-[1px] border-zinc-900">
-      <div className="flex flex-col justify-start  text-white font-roboto gap-3 max-w-xl ">
+    <div className="w-full h-screen flex justify-around lg:justify-center items-center border-b-[1px] border-zinc-900 ">
+      <div className="flex flex-col justify-start lg:items-center  w-[512px] lg:text-center text-white font-roboto gap-3   ">
         <h1 className="font-semibold text-4xl">Gabriel Shiota</h1>
         <h3 className="font-medium text-2xl mt-3 border-b-[1px] border-sky-400	">
           Desenvolvedor Web
@@ -33,7 +33,7 @@ export function AboutMe() {
         <img
           src={imgAboutMe}
           alt=""
-          className="h-96 w-96 rounded-lg border-[2px] border-sky-400"
+          className="h-96 w-96 lg:hidden rounded-lg border-[2px] border-sky-400"
         />
       </div>
     </div>

@@ -35,11 +35,11 @@ export function Skills() {
   ];
 
   return (
-    <div className="h-screen w-full flex flex-col items-center justify-center border-b-[1px] border-zinc-900 ">
+    <div className="h-screen xl:h-auto w-full flex flex-col items-center justify-center border-b-[1px] border-zinc-900 ">
       <div className="w-full flex flex-col items-center gap-10 text-white ">
         <h1 className="text-6xl">Hard Skills</h1>
         <div
-          className="flex gap-6 
+          className="flex gap-6 xl:flex-col
          rounded-lg"
         >
           {stacks.map((stack) => (
