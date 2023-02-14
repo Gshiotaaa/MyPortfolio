@@ -1,4 +1,8 @@
-import { SkillsDescription } from "./SkillsDescription";
+import { motion } from "framer-motion";
+import { ArrowDown } from "phosphor-react";
+import { useContext, useRef } from "react";
+import { SkillsDescription } from "../components/SkillsDescription";
+import { ViewPortContext } from "../context/ViewPortContext";
 
 export function Skills() {
   const stacks = [
@@ -34,13 +38,32 @@ export function Skills() {
     },
   ];
 
+  const skills = useRef(null);
+  const { setVisibleSection } = useContext(ViewPortContext);
+
   return (
-    <div className="h-screen xl:h-auto w-full flex flex-col items-center justify-center border-b-[1px] border-zinc-900 ">
-      <div className="w-full flex flex-col items-center gap-10 text-white ">
+    <motion.div
+      ref={skills}
+      id="Skills"
+      className="w-full xl:h-screen flex flex-col items-center "
+      onViewportEnter={() =>
+        setVisibleSection((prevState) => ({
+          ...prevState,
+          skills: true,
+        }))
+      }
+      onViewportLeave={() =>
+        setVisibleSection((prevState) => ({
+          ...prevState,
+          skills: false,
+        }))
+      }
+    >
+      <div className="w-full xl:h-full flex flex-col items-center justify-center gap-10 text-white border-b-[1px] border-zinc-900 ">
         <h1 className="text-6xl">Hard Skills</h1>
         <div
-          className="flex gap-6 xl:flex-col
-         rounded-lg"
+          className="xl:flex gap-6
+         rounded-lg grid grid-cols-2 sm:grid-cols-3 "
         >
           {stacks.map((stack) => (
             <SkillsDescription
@@ -52,7 +75,18 @@ export function Skills() {
             />
           ))}
         </div>
+        <p className="text-lg opacity-40 hidden xl:block">
+          Passe o mouse sob as tecnologias.
+        </p>
       </div>
-    </div>
+      <a href="#Projects">
+        <ArrowDown
+          size={32}
+          color="#47e0ff"
+          weight="bold"
+          className="animate-bounce mt-[-60px] hidden xl:block"
+        />
+      </a>
+    </motion.div>
   );
 }

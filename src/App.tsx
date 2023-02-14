@@ -1,18 +1,40 @@
-import { AboutMe } from "./components/AboutMe";
+import { useEffect, useRef, useState } from "react";
+import useScrollSnap from "react-use-scroll-snap";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
-import { Projects } from "./components/Projects";
-import { Skills } from "./components/Skills";
+import { ViewPortProvider } from "./context/ViewPortContext";
+import { AboutMe } from "./pages/AboutMe";
+import { Projects } from "./pages/Projects";
+import { Skills } from "./pages/Skills";
 
 export function App() {
-  return (
-    <div className=" bg-black flex flex-col items-center">
-      <Header />
-      <AboutMe />
-      <Skills />
-      <Projects />
+  const scrollRef = useRef(null);
 
-      <Footer />
-    </div>
+  const [width, setWidth] = useState<number>(window.innerWidth);
+
+  function getWidthViewPort() {
+    setWidth(window.innerWidth);
+  }
+
+  useEffect(() => {
+    getWidthViewPort();
+  }, []);
+
+  {
+    width > 1270
+      ? useScrollSnap({ ref: scrollRef, duration: 1, delay: 1 })
+      : useScrollSnap({ ref: null });
+  }
+
+  return (
+    <ViewPortProvider>
+      <Header />
+      <div className="flex flex-col items-center gap-2  " ref={scrollRef}>
+        <AboutMe />
+        <Skills />
+        <Projects />
+        <Footer />
+      </div>
+    </ViewPortProvider>
   );
 }

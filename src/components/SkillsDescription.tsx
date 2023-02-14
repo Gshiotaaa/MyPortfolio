@@ -13,7 +13,7 @@ export function SkillsDescription({
 }: SkillsDescriptionProps) {
   return (
     <div className="flex gap-4">
-      <div className=" w-60 h-[340px] px-3 py-8 flex flex-col items-center gap-14 rounded-md overflow-hidden group border-b-[1px] border-sky-400 hover:bg-zinc-900 hover:gap-0 transition-all duration-1000">
+      <div className=" w-60 h-[340px] px-3 py-8 flex flex-col items-center gap-14 rounded-md overflow-hidden group border-b-[1px] border-sky-400 shadow-inner hover:shadow-sky-400 hover:bg-zinc-900 hover:gap-0 transition-all duration-1000">
         <h1 className="text-lg font-medium group-hover:opacity-0 text-gray-400 group-hover:text-white transition-opacity duration-700">
           {nameStack}
         </h1>
