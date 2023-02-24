@@ -62,7 +62,7 @@ export function Projects() {
         target="_blank"
         className="text-white text-xl opacity-30 hover:opacity-100 text-center snap-always snap-center"
       >
-        Todas informações dessa sessão estão sendo consumidas através da API do
+        Todas informações desta sessão estão sendo consumidas através da API do
         GitHub
       </a>
     </motion.div>
