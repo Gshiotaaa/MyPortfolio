@@ -34,11 +34,11 @@ export function AboutMe() {
             Frontend Developer
           </h3>
           <p className="text-xl text-gray-400">
-            Estudante de Ciência da computação com foco em Desenvolvimento Web.
+            Estudante de ciência da computação e desenvolvimento web.
           </p>
           <p className="text-xl text-gray-400">
-            Desenvolvimento de interfaces para web utilizando JavaScript e seus
-            Frameworks.
+            Desenvolvimento de aplicações voltadas para web utilizando
+            JavaScript e os seus frameworks.
           </p>
 
           <nav className="mt-4 flex gap-3">

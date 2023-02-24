@@ -2,6 +2,8 @@ import clsx from "clsx";
 import { useContext, useEffect, useState } from "react";
 import { ViewPortContext } from "../context/ViewPortContext";
 
+import logo from "../assets/logo.png";
+
 export function Header() {
   const [scroll, setScroll] = useState(0);
 
@@ -18,19 +20,22 @@ export function Header() {
         { "h-20 bg-opacity-40 backdrop-blur-sm ": scroll > 0 }
       )}
     >
-      <img className="h-14 w-14 bg-zinc-800 hidden lg:block " src="" alt="" />
+      <img className="h-16 w-16 hidden lg:block" src={logo} alt="" />
       <div>
         <nav>
           <ul className="text-gray-400 flex gap-8 font-roboto font-normal text-2xl">
             <li
-              className={clsx("hover:text-white transition-all duration-500", {
-                "xl:text-white text-gray-400": visibleSection.home,
-              })}
+              className={clsx(
+                "xl:hover:text-white transition-all duration-500",
+                {
+                  "xl:text-white ": visibleSection.home,
+                }
+              )}
             >
               <a href="#Home"> Home</a>
             </li>
             <li
-              className={clsx("hover:text-white transition-all duration-500", {
+              className={clsx("hover:text-white transition-all duration-200", {
                 "xl:text-white text-gray-400": visibleSection.skills,
               })}
             >
