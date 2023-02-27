@@ -27,7 +27,7 @@ export function AboutMe() {
         }))
       }
     >
-      <div className="h-full w-full flex lg:justify-around justify-center items-center lg:border-b-[1px] border-zinc-900">
+      <div className="h-full w-full flex lg:justify-around justify-center items-center lg:border-b-[1px] border-zinc-900 p-2 sm:p-0">
         <div className="flex flex-col justify-start items-center lg:items-start  w-[512px] text-center lg:text-start text-white font-roboto gap-3   ">
           <h1 className="font-semibold text-4xl">Gabriel Shiota</h1>
           <h3 className="font-medium text-2xl mt-3 border-b-[1px] border-sky-400	">

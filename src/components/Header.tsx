@@ -35,16 +35,22 @@ export function Header() {
               <a href="#Home"> Home</a>
             </li>
             <li
-              className={clsx("hover:text-white transition-all duration-200", {
-                "xl:text-white text-gray-400": visibleSection.skills,
-              })}
+              className={clsx(
+                "xl:hover:text-white transition-all duration-200",
+                {
+                  "xl:text-white text-gray-400": visibleSection.skills,
+                }
+              )}
             >
               <a href="#Skills">Skills</a>
             </li>
             <li
-              className={clsx("hover:text-white transition-all duration-500", {
-                "xl:text-white text-gray-400": visibleSection.projects,
-              })}
+              className={clsx(
+                "xl:hover:text-white transition-all duration-500",
+                {
+                  "xl:text-white text-gray-400": visibleSection.projects,
+                }
+              )}
             >
               <a href="#Projects">Projects</a>
             </li>
