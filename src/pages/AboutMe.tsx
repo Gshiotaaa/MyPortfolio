@@ -61,7 +61,7 @@ export function AboutMe() {
           />
         </div>
       </div>
-      <a href="#Skills">
+      <a href="#Skills" className="transition-all duration-1000">
         <ArrowDown
           size={32}
           color="#47e0ff"

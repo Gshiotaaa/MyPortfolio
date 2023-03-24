@@ -6,7 +6,6 @@ interface ProjectsDescriptionProps {
   language: string;
   created_at: Date;
 }
-
 export function ProjectsDescription({
   name,
   html_url,

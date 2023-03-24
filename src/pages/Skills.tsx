@@ -52,10 +52,8 @@ export function Skills() {
   function handleNextStack() {
     if (page == stacks.length - 1) {
       setPage(0);
-
       return;
     }
-
     setPage(page + 1);
   }
 
@@ -64,7 +62,6 @@ export function Skills() {
       setPage(stacks.length - 1);
       return;
     }
-
     setPage(page - 1);
   }
 
@@ -72,7 +69,7 @@ export function Skills() {
     <motion.div
       ref={skills}
       id="Skills"
-      className="w-full xl:h-screen flex flex-col items-center "
+      className="w-full h-screen flex flex-col items-center "
       onViewportEnter={() =>
         setVisibleSection((prevState) => ({
           ...prevState,
@@ -86,7 +83,7 @@ export function Skills() {
         }))
       }
     >
-      <div className="w-full xl:h-full flex flex-col items-center justify-center gap-10 text-white lg:border-b-[1px] border-zinc-900 ">
+      <div className="w-full h-full  flex flex-col items-center justify-center gap-10 text-white lg:border-b-[1px] border-zinc-900 ">
         <h1 className="text-6xl">Hard Skills</h1>
         <div>
           <div className="flex max-w-[240px] relative overflow-hidden sm:hidden ">

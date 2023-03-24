@@ -16,8 +16,27 @@ export function Projects() {
   const { setVisibleSection } = useContext(ViewPortContext);
   const projects = useRef(null);
 
+  async function getRepos() {
+    try {
+      const response = await api.get("/repos");
+      const repos = response.data;
+      slice(repos);
+    } catch (er) {
+      console.log(er);
+    }
+  }
+
+  function filter(repo: GitRepos[]) {
+    return repo.filter((project) => project.name !== "mentor-cyle-fe");
+  }
+
+  function slice(repo: GitRepos[]) {
+    filter(repo);
+    setRepos(repo.slice(0, 5));
+  }
+
   useEffect(() => {
-    api.get("/repos").then((response) => setRepos(response.data));
+    getRepos();
   }, []);
 
   function compare(a: GitRepos, b: GitRepos) {
@@ -44,18 +63,15 @@ export function Projects() {
     >
       <h1 className="text-6xl text-center">Projetos</h1>
       <div className="xl:w-11/12 w-full flex flex-col p-3 gap-5 ">
-        {repos
-          .slice(0, 5)
-          .sort(compare)
-          .map((repo) => (
-            <ProjectsDescription
-              key={repo.name}
-              name={repo.name}
-              language={repo.language}
-              created_at={repo.created_at}
-              html_url={repo.html_url}
-            />
-          ))}
+        {repos.sort(compare).map((repo) => (
+          <ProjectsDescription
+            key={repo.name}
+            name={repo.name}
+            language={repo.language}
+            created_at={repo.created_at}
+            html_url={repo.html_url}
+          />
+        ))}
       </div>
       <a
         href="https://api.github.com/users/gshiotaaa/repos"

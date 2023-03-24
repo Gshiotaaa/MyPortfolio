@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { ViewPortContext } from "../context/ViewPortContext";
 
 import logo from "../assets/logo.png";
@@ -9,9 +9,7 @@ export function Header() {
 
   const { visibleSection } = useContext(ViewPortContext);
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => setScroll(window.scrollY));
-  }, []);
+  window.addEventListener("scroll", () => setScroll(window.scrollY));
 
   return (
     <div
