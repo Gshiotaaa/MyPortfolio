@@ -1,7 +1,10 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { ArrowDown, CaretLeft, CaretRight } from "phosphor-react";
-import { useContext, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowDown } from "phosphor-react";
+import { useContext, useRef } from "react";
+
 import { SkillsDescription } from "../components/SkillsDescription";
+import { SkillsDescriptionForMobile } from "../components/SkillsDescriptionForMobile";
+
 import { ViewPortContext } from "../context/ViewPortContext";
 
 import cssIcon from "../assets/stacksImage/cssIcon.png";
@@ -11,8 +14,6 @@ import reactIcon from "../assets/stacksImage/reactIcon.png";
 import typescriptIcon from "../assets/stacksImage/tsIcon.png";
 
 export function Skills() {
-  const [page, setPage] = useState(0);
-
   const stacks = [
     {
       name: "HTML",
@@ -49,22 +50,6 @@ export function Skills() {
   const skills = useRef(null);
   const { setVisibleSection } = useContext(ViewPortContext);
 
-  function handleNextStack() {
-    if (page == stacks.length - 1) {
-      setPage(0);
-      return;
-    }
-    setPage(page + 1);
-  }
-
-  function handlePrevStack() {
-    if (page == 0) {
-      setPage(stacks.length - 1);
-      return;
-    }
-    setPage(page - 1);
-  }
-
   return (
     <motion.div
       ref={skills}
@@ -87,24 +72,7 @@ export function Skills() {
         <h1 className="text-6xl">Hard Skills</h1>
         <div>
           <div className="flex max-w-[240px] relative overflow-hidden sm:hidden ">
-            <button onClick={handlePrevStack} className="absolute z-10 top-1/2">
-              <CaretLeft />
-            </button>
-            <AnimatePresence>
-              <SkillsDescription
-                key={stacks[page].name}
-                nameStack={stacks[page].name}
-                img={stacks[page].img}
-                title={stacks[page].name}
-                description={stacks[page].description}
-              />
-            </AnimatePresence>
-            <button
-              onClick={handleNextStack}
-              className="absolute right-0 z-10 top-1/2"
-            >
-              <CaretRight />
-            </button>
+            <SkillsDescriptionForMobile stacks={stacks} />
           </div>
           <div className="flex gap-4 max-sm:hidden max-lg:grid max-lg:grid-cols-3">
             {stacks.map((stack) => (
